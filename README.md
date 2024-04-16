@@ -30,31 +30,31 @@ A program lehetővé teszi a felhasználó számára, hogy negatív számokat á
 
 Használati útmutató 
 
-    Számok beírása: Használja a gombokat a számok beírásához a képernyőre. 
+  Számok beírása: Használja a gombokat a számok beírásához a képernyőre. 
 
-    Műveletek kiválasztása: Válassza ki az elvégzendő műveletet a megfelelő gomb segítségével (+, -, *, /). 
+   Műveletek kiválasztása: Válassza ki az elvégzendő műveletet a megfelelő gomb segítségével (+, -, *, /). 
 
-    Számítás elvégzése: Nyomja meg az "=" gombot a számítások végrehajtásához. 
+   Számítás elvégzése: Nyomja meg az "=" gombot a számítások végrehajtásához. 
 
-    Eredmény megjelenítése: Az eredmény megjelenik a képernyőn. 
+   Eredmény megjelenítése: Az eredmény megjelenik a képernyőn. 
 
-    Törlés: Ha szükséges, használja a "C" gombot az aktuális művelet vagy eredmény törléséhez. 
+   Törlés: Ha szükséges, használja a "C" gombot az aktuális művelet vagy eredmény törléséhez. 
 
 Telepítési útmutató 
 
-    Töltsd le a Java Development Kit (JDK) legfrissebb verzióját és telepítsd a számítógépedre. 
+   Töltsd le a Java Development Kit (JDK) legfrissebb verzióját és telepítsd a számítógépedre. 
 
-    Töltsd le a forráskódot a GitHub repository-ból. 
+   Töltsd le a forráskódot a GitHub repository-ból. 
 
-    Nyisd meg a forráskódot egy Java fejlesztőkörnyezetben (pl. NetBeans, IntelliJ IDEA). 
+   Nyisd meg a forráskódot egy Java fejlesztőkörnyezetben (pl. NetBeans, IntelliJ IDEA). 
 
-    Fordítsd le és futtasd a programot a fejlesztőkörnyezetből. 
+   Fordítsd le és futtasd a programot a fejlesztőkörnyezetből. 
 
 Rendszerkövetelmények 
 
-    Java Development Kit (JDK) 8 vagy újabb verziója 
+   Java Development Kit (JDK) 8 vagy újabb verziója 
 
-    Java Swing API-t támogató fejlesztőkörnyezet (pl. NetBeans, IntelliJ IDEA) 
+   Java Swing API-t támogató fejlesztőkörnyezet (pl. NetBeans, IntelliJ IDEA) 
 
 Fejlesztői információk 
 
@@ -73,24 +73,24 @@ Ha bármilyen hibát találsz az alkalmazásban, kérlek jelentsd azt a GitHub r
 https://github.com/bullky11/simpleCalculatorJava.git  vagy lépj kapcsolatba a fejlesztővel az alábbi elérhetőségeken. 
 
 
-                                                                  Hogyan készült 
+  Hogyan készült 
 
 Számok megjelenítése 
 
-    0-9 számok gombjai: A számok megjelenítéséhez és hozzáadásához 10 különböző gombot készítettél el. Például: 
+   0-9 számok gombjai: A számok megjelenítéséhez és hozzáadásához 10 különböző gombot készítettél el. Például: 
 
      
+    
+     private void jBtn1ActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        String Enternumber = jtxtDisplay.getText() + jBtn1.getText(); 
+        jtxtDisplay.setText(Enternumber); 
+    } 
 
-private void jBtn1ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-    String Enternumber = jtxtDisplay.getText() + jBtn1.getText(); 
-    jtxtDisplay.setText(Enternumber); 
-} 
-
-    Ez a metódus hozzáadja a "1" számot a jelenlegi számológép képernyő tartalmához, amikor a "1" gombra kattint a felhasználó. 
+   Ez a metódus hozzáadja a "1" számot a jelenlegi számológép képernyő tartalmához, amikor a "1" gombra kattint a felhasználó. 
 
 Alapvető műveletek végrehajtása 
 
-    Összeadás, kivonás, szorzás, osztás gombok: A műveletek végrehajtásához négy különböző gombot készítettél el, mindegyik a megfelelő műveletet hajtja végre. Például: 
+   Összeadás, kivonás, szorzás, osztás gombok: A műveletek végrehajtásához négy különböző gombot készítettél el, mindegyik a megfelelő műveletet hajtja végre. Például: 
 
 java 
 
@@ -105,32 +105,32 @@ Ez a metódus beállítja az operations változót a "+" műveletre, és törli 
 
 Számítások végrehajtása 
 
-    Egyenlőségjel (=) gomb: A számítások végrehajtásához és az eredmény megjelenítéséhez egy külön gombot készítettél el. Például: 
+Egyenlőségjel (=) gomb: A számítások végrehajtásához és az eredmény megjelenítéséhez egy külön gombot készítettél el. Például: 
 
 java 
 
-private void jBtn18ActionPerformed(java.awt.event.ActionEvent evt) {                                        
-    String answer; 
-    secondnum = Double.parseDouble(jtxtDisplay.getText()); 
-    switch (operations) { 
-        case "+": 
-            result = firstnum + secondnum; 
-            break; 
-        case "-": 
-            result = firstnum - secondnum; 
-            break; 
-        case "*": 
-            result = firstnum * secondnum; 
-            break; 
-        case "/": 
-            result = firstnum / secondnum; 
-            break; 
-        default: 
-            throw new IllegalArgumentException("Invalid operation: " + operations); 
+    private void jBtn18ActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        String answer; 
+        secondnum = Double.parseDouble(jtxtDisplay.getText()); 
+        switch (operations) { 
+            case "+": 
+                result = firstnum + secondnum; 
+                break; 
+            case "-": 
+                result = firstnum - secondnum; 
+                break; 
+            case "*": 
+                result = firstnum * secondnum; 
+                break; 
+            case "/": 
+                result = firstnum / secondnum; 
+                break; 
+            default: 
+                throw new IllegalArgumentException("Invalid operation: " + operations); 
+        } 
+        answer = String.valueOf(result); 
+        jtxtDisplay.setText(answer); 
     } 
-    answer = String.valueOf(result); 
-    jtxtDisplay.setText(answer); 
-} 
  
 
 Ez a metódus végrehajtja a kiválasztott matematikai műveletet (összeadás, kivonás, szorzás vagy osztás) az első és a második szám alapján, majd megjeleníti az eredményt a képernyőn. 
